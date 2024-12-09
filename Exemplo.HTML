@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gravidade.js - Exemplo</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .obj_gravidade {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      border-radius: 50%;
+      top: 0px; 
+      left: 50%; 
+      /* Centralizado na horizontal */
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="obj_gravidade"></div>
+  <div class="obj_gravidade"></div>
+  <div class="obj_gravidade"></div>
+
+  <script src="gravidade.js"></script> 
+  <script>
+    window.onload = function() {
+      const objetos = document.getElementsByClassName('obj_gravidade');
+
+      const gravidade = new Gravidade(1, 0.5);
+
+      gravidade.iniciarAnimação(objetos);
+    };
+  </script>
+
+</body>
+</html>
